@@ -1,4 +1,4 @@
-package dominioBD;
+package ModeloDB;
 
 import BasedeDatos.ConnectionPool;
 import Modelo.Producto;
@@ -138,25 +138,26 @@ public class ProductoDB {
         }
     }
     
-    public static Diario getDiarioPorId(int idDiario) {
+    public static Producto getProductoPorId(int idProducto) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
-        Diario diario = null;
-        String query = "SELECT * FROM diario WHERE id= ?";
+        Producto producto = null;
+        String query = "SELECT * FROM PRODUCTO WHERE ID= ?";
 
         try {
             ps = connection.prepareStatement(query);
-            ps.setInt(1, idDiario);
+            ps.setInt(1, idProducto);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                diario = new Diario(rs.getInt("id"),
-                        rs.getString("nombreUsuario"),
-                        rs.getString("titulo"),
-                        rs.getDate("fechaInicio"),
-                        rs.getDate("fechaFin"),
-                        rs.getString("descripcion"),
-                        rs.getBoolean("enCurso"));
+                producto = new Producto(rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("diario"),
+                        rs.getDouble("precio"),
+                        rs.getString("imagen"),
+                        rs.getInt("valoracion"),
+                        rs.getString("animal"),
+                        rs.getString("categoria"));
             }
             ps.close();
             pool.freeConnection(connection);
@@ -165,23 +166,33 @@ public class ProductoDB {
             e.printStackTrace();
 
         }
-        return diario;
+        return producto;
     }
 
-    public static int modificarDiario(int id, String tituloViaje, Date fechaInicio, Date fechaFin, String descripcion) {
+    public static int modificarProducto(int id,
+            String nombre,
+            String descripcion,
+            double precio,
+            String imagen,
+            int valoracion,
+            String animal,
+            String categoria) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps;
         String query
-                = "UPDATE diario SET titulo = ? , fechaInicio = ? , fechaFin = ? "
-                + ", descripcion = ? WHERE id=?";
+                = "UPDATE PRODUCTO SET NOMBRE = ? , DESCRIPCION = ? , PRECIO = ? , IMAGEN = ? "
+                + ", VALORACION = ? , ANIMAL = ? , CATEGORIA = ? WHERE id=?";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, tituloViaje);
-            ps.setDate(2, fechaInicio);
-            ps.setDate(3, fechaFin);
-            ps.setString(4, descripcion);
-            ps.setInt(5, id);
+            ps.setString(1, nombre);
+            ps.setString(2, descripcion);
+            ps.setDouble(3, precio);
+            ps.setString(4, imagen);
+            ps.setInt(5, valoracion);
+            ps.setString(6, animal);
+            ps.setString(7, categoria);
+            ps.setInt(8, id);
             int res = ps.executeUpdate();
             ps.close();
             pool.freeConnection(connection);
@@ -192,20 +203,20 @@ public class ProductoDB {
             return 0;
         }
     }
-
-    public static String getTituloDelDiario(int idDiario) {
+/* es posible que haya que borrarlo
+    public static String getNombredelProducto(int idProducto) {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         PreparedStatement ps = null;
         String titulo = null;
-        String query = "SELECT * FROM diario WHERE id= ?";
+        String query = "SELECT * FROM PRODUCTO WHERE ID = ?";
 
         try {
             ps = connection.prepareStatement(query);
-            ps.setInt(1, idDiario);
+            ps.setInt(1, idProducto);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                titulo = rs.getString("titulo");
+                titulo = rs.getString("nombre");
             }
             ps.close();
             pool.freeConnection(connection);
@@ -215,5 +226,5 @@ public class ProductoDB {
 
         }
         return titulo;
-    }
+    }*/
 }
