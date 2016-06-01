@@ -5,6 +5,7 @@
  */
 package Acciones;
 
+import ModeloDB.ProductoDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -72,11 +73,13 @@ public class ObtenerCesta extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException{
+        
+        
         ArrayList productos = (ArrayList)request.getAttribute("productos");
         
-        for (int i =0; i < productos.size(); i++){
+      for (int i =0; i < productos.size(); i++){
             
-        }
+      }  
     }
 
     /**
