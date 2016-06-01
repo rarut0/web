@@ -75,12 +75,13 @@ public class ObtenerCesta extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException{
         
+        String url = "/cesta.jsp";
         
         ArrayList<Integer> productos = (ArrayList<Integer>)request.getAttribute("productos");
         
       for (int i =0; i < productos.size(); i++){
             Producto producto =ProductoDB.getProductoPorId(productos.get(i));
-            
+            request.setAttribute("producto", producto);
       }  
     }
 
