@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package ModeloDB;
 
 /**
  *
- * @author Dawn_
+ * @author Roberto
  */
-public class MisPedidos {
+public class UsuarioDB {
     
 }
