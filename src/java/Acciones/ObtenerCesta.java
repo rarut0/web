@@ -73,7 +73,6 @@ public class ObtenerCesta extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException{
         ArrayList productos = (ArrayList)request.getAttribute("productos");
-        System.out.println("holaMundo");
         
         for (int i =0; i < productos.size(); i++){
         }
