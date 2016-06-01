@@ -4,10 +4,42 @@ import java.sql.Date;
 
 /**
  *
- * @author josefrancisco
  */
 public class Usuario {
 
+     
+    private String nombre;
+    private String apellido;
+    private String nick;
+    private String password;
+    private final String direccion;
+    private String email;
+    private int cp;
+    private String poblacion; 
+    private String ciudad; 
+    private int movil;
+    private int telefono;
+    private int fechaNacimiento;
+
+
+
+    public Usuario(String nombre,String apellido, String nick,String password, String direccion,String email, int cp,String poblacion,String ciudad,int movil,int telefono, int fechaNacimiento) {
+        
+        this.nombre=nombre;
+        this.apellido = apellido;
+        this.nick = nick;
+        this.password = password;
+        this.direccion = direccion;
+        this.email = email;
+        this.cp=cp;
+        this.poblacion = poblacion;
+        this.ciudad = ciudad;
+        this.movil = movil;
+        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
+
+    } 
+    
     public String getNombre() {
         return nombre;
     }
@@ -82,34 +114,33 @@ public class Usuario {
   public String getDireccion() {
         return direccion;
     }
-  
-  
-    private String nombre;
-    private String apellido;
-    private String nick;
-    private String password;
-    private final String direccion;
-    private String email;
-    private int cp;
-    private String ciudad; 
-    private int telefono;
-    private int fechaNacimiento;
 
-
-
-    public Usuario(String nombre,String apellido, String nick,String password, String direccion,String email, int cp,String ciudad,int telefono, int fechaNacimiento) {
-        
-        this.nombre=nombre;
-        this.apellido = apellido;
-        this.nick = nick;
-        this.password = password;
-        this.direccion = direccion;
-        this.email = email;
-        this.cp=cp;
-        this.ciudad = ciudad;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
-
+    /**
+     * @return the poblacion
+     */
+    public String getPoblacion() {
+        return poblacion;
     }
 
+    /**
+     * @param poblacion the poblacion to set
+     */
+    public void setPoblacion(String poblacion) {
+        this.poblacion = poblacion;
+    }
+
+    /**
+     * @return the movil
+     */
+    public int getMovil() {
+        return movil;
+    }
+
+    /**
+     * @param movil the movil to set
+     */
+    public void setMovil(int movil) {
+        this.movil = movil;
+    }
+ 
 }

@@ -35,9 +35,11 @@ public class Registrar extends HttpServlet {
         int fechaNacimiento = Integer.parseInt("edad");
         String ciudad = request.getParameter("ciudad");
         int telefono = Integer.parseInt(request.getParameter("telefono"));
-
+        String poblacion = request.getParameter("poblacion");
+        int movil = Integer.parseInt(request.getParameter("movil"));
+        
         String url;
-        Usuario u = new Usuario( nombre, apellido,  nick, password,  direccion, email,  cp, ciudad, telefono,  fechaNacimiento);
+        Usuario u = new Usuario( nombre, apellido,  nick, password,  direccion, email,  cp, poblacion, ciudad, movil, telefono,  fechaNacimiento);
         
         if (Metodos.addUsuario(u)) {
             //El usuario se creo correctamente
