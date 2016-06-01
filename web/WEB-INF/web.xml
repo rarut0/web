@@ -4,9 +4,17 @@
         <servlet-name>VerProductos</servlet-name>
         <servlet-class>Acciones.VerProductos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ObtenerCesta</servlet-name>
+        <servlet-class>Acciones.ObtenerCesta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerProductos</servlet-name>
         <url-pattern>/VerProductos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ObtenerCesta</servlet-name>
+        <url-pattern>/ObtenerCesta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
