@@ -5,6 +5,7 @@
  */
 package Acciones;
 
+import Modelo.Producto;
 import ModeloDB.ProductoDB;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -74,11 +75,13 @@ public class ObtenerCesta extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException{
         
+        String url = "/cesta.jsp";
         
-        ArrayList productos = (ArrayList)request.getAttribute("productos");
+        ArrayList<Integer> productos = (ArrayList<Integer>)request.getAttribute("productos");
         
       for (int i =0; i < productos.size(); i++){
-            
+            Producto producto =ProductoDB.getProductoPorId(productos.get(i));
+            request.setAttribute("producto", producto);
       }  
     }
 

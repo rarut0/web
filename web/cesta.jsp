@@ -53,7 +53,7 @@
                 <td colspan="4" >
                 	<br>
                     <br>
-                    <p id="contacto">¡La cesta esta vacía!</p>
+                    <%
                 
                 	<hr size="2px" width="90%" noshade="noshade" align="center" />
                 </td>
