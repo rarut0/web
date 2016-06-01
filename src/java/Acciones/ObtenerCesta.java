@@ -75,6 +75,7 @@ public class ObtenerCesta extends HttpServlet {
         ArrayList productos = (ArrayList)request.getAttribute("productos");
         
         for (int i =0; i < productos.size(); i++){
+            
         }
     }
 
