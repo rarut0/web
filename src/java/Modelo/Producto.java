@@ -5,7 +5,7 @@
  */
 package Modelo;
  
-public class Productos {
+public class Producto {
     private int id;
     private String nombre;
     private String descripcion;
@@ -15,7 +15,7 @@ public class Productos {
     private String animal;
     private String categoria;
  
-    public Productos (int id, String nombre, String descripcion, double precio, String imagen, int valoracion, String animal, String categoria){
+    public Producto (int id, String nombre, String descripcion, double precio, String imagen, int valoracion, String animal, String categoria){
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -26,7 +26,7 @@ public class Productos {
         this.categoria = categoria;
     }
     
-    public Productos (){
+    public Producto (){
         id = -2;
         nombre = null;
         descripcion = null;
