@@ -7,59 +7,68 @@ import java.sql.Date;
  */
 public class Usuario {
 
-     
+    private int id; 
     private String nombre;
-    private String apellido;
+    private String apellidos;
     private String nick;
     private String password;
-    private final String direccion;
-    private String email;
+    private String direccion;
     private int cp;
-    private String poblacion; 
-    private String ciudad; 
-    private int movil;
+    private String mail;; 
+    private String ciudad;
+    private String provincia;
     private int telefono;
-    private int fechaNacimiento;
+    private Date fechaNac;
 
 
 
-    public Usuario(String nombre,String apellido, String nick,String password, String direccion,String email, int cp,String poblacion,String ciudad,int movil,int telefono, int fechaNacimiento) {
-        
+    public Usuario(int id, String nombre, String apellidos, String nick, String password, String direccion, int cp, String mail, String ciudad, String provincia, int telefono, Date fechaNac) {
+        this.id = id;
         this.nombre=nombre;
-        this.apellido = apellido;
+        this.apellidos = apellidos;
         this.nick = nick;
         this.password = password;
         this.direccion = direccion;
-        this.email = email;
         this.cp=cp;
-        this.poblacion = poblacion;
+        this.mail = mail;
         this.ciudad = ciudad;
-        this.movil = movil;
+        this.provincia = provincia;
         this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
-
+        this.fechaNac = fechaNac;
     } 
+    public Usuario(){
+        id = -2;
+        nombre = null;
+        apellidos = null;
+        nick = null;
+        password = null;
+        direccion = null;
+        cp = -2;
+        mail = null;
+        ciudad = null;
+        provincia = null;
+        telefono = -2;
+        fechaNac = null;
+        
+    }
     
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getApellidos() {
+        return apellidos;
     }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getNick() {
         return nick;
     }
-
     public void setNick(String nick) {
         this.nick = nick;
     }
@@ -67,80 +76,57 @@ public class Usuario {
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public String getEmail() {
-        return email;
+    
+    public String getDireccion(){
+        return direccion;
+    }
+    public void setDireccion(String direccion){
+        this.direccion = direccion;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getCp() {
+    public int getCP() {
         return cp;
     }
-
-    public void setCp(int cp) {
+    public void setCP(int cp) {
         this.cp = cp;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 
     public String getCiudad() {
         return ciudad;
     }
-
     public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+    
+    public String getProvincia(){
+        return provincia;
+    }
+    public void setProvincia(String provincia){
+        this.provincia = provincia;
     }
 
     public int getTelefono() {
         return telefono;
     }
-
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
-    public int getFechaNacimiento() {
-        return fechaNacimiento;
+    public Date getFechaNac() {
+        return fechaNac;
     }
 
-    public void setFechaNacimiento(int fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFechaNacimiento(Date fechaNac) {
+        this.fechaNac = fechaNac;
     }
-  public String getDireccion() {
-        return direccion;
-    }
-
-    /**
-     * @return the poblacion
-     */
-    public String getPoblacion() {
-        return poblacion;
-    }
-
-    /**
-     * @param poblacion the poblacion to set
-     */
-    public void setPoblacion(String poblacion) {
-        this.poblacion = poblacion;
-    }
-
-    /**
-     * @return the movil
-     */
-    public int getMovil() {
-        return movil;
-    }
-
-    /**
-     * @param movil the movil to set
-     */
-    public void setMovil(int movil) {
-        this.movil = movil;
-    }
- 
 }

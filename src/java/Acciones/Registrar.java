@@ -1,6 +1,6 @@
 package Acciones;
 
-import BasedeDatos.Metodos;
+import ModeloDB.UsuarioDB;
 import BasedeDatos.Rutas;
 import Modelo.Usuario;
 import java.io.File;
@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -29,19 +30,19 @@ public class Registrar extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String nick = request.getParameter("nick");
         String password = request.getParameter("password");
-        String email = request.getParameter("email");
+        String mail = request.getParameter("email");
         String direccion = request.getParameter("direccion");
         int cp = Integer.parseInt(request.getParameter("codigo"));
-        int fechaNacimiento = Integer.parseInt("edad");
+        Date fechaNac = (Date)request.getAttribute("edad");
         String ciudad = request.getParameter("ciudad");
         int telefono = Integer.parseInt(request.getParameter("telefono"));
-        String poblacion = request.getParameter("poblacion");
+        String provincia = request.getParameter("provincia");
         int movil = Integer.parseInt(request.getParameter("movil"));
         
         String url;
-        Usuario u = new Usuario( nombre, apellido,  nick, password,  direccion, email,  cp, poblacion, ciudad, movil, telefono,  fechaNacimiento);
+        Usuario u = new Usuario(0, nombre, apellido, nick, password,  direccion, cp,  mail, ciudad, provincia, telefono,  fechaNac);
         
-        if (Metodos.addUsuario(u)) {
+        if (UsuarioDB.getUsuarioPorNick(nick)==null) {
             //El usuario se creo correctamente
             url = "/index.jsp";
             //JOptionPane.showMessageDialog(panel, "Usuario creado con exito.");
