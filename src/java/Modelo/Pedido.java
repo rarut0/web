@@ -37,7 +37,7 @@ public class Pedido {
         this.id = id;
     }
     
-    public int getIdCliete(){
+    public int getIdCliente(){
         return idCliente;
     }
     public void setIdCliente(int idCliente){
