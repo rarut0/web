@@ -8,6 +8,10 @@
         <servlet-name>ObtenerCesta</servlet-name>
         <servlet-class>Acciones.ObtenerCesta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AñadirAlCarrito</servlet-name>
+        <servlet-class>Acciones.AñadirAlCarrito</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerProductos</servlet-name>
         <url-pattern>/VerProductos</url-pattern>
