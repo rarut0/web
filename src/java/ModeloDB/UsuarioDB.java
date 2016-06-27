@@ -193,7 +193,7 @@ public class UsuarioDB {
         return usuario;
     }
 
-    public static int modificarProducto(int id, 
+    public static int modificarUsuario(int id, 
             String nombre, 
             String apellidos,
             String nick,

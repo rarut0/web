@@ -20,6 +20,10 @@
         <servlet-name>ObtenerCesta</servlet-name>
         <url-pattern>/ObtenerCesta</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Prueba</servlet-name>
+        <url-pattern>/Prueba</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
