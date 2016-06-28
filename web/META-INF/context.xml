@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context antiJARLocking="true" path="/Mundo-Animal">
-<Resource name="jdbc/mundoAnimal" auth="Container"
- maxActive="100" maxIdle="30" maxWait="10000"
- username="" password=""
- driverClassName="org.apache.derby.jdbc.ClientDriver"
- url="jdbc:derby://localhost:1527/mundoAnimal"
- logAbandoned="true" removeAbandoned="true"
- removeAbandonedTimeout="60" type="javax.sql.DataSource" /> 
+  <Resource auth="Container" driverClassName="org.apache.derby.jdbc.ClientDriver" logAbandoned="true" maxActive="100" maxIdle="30" maxWait="10000" name="jdbc/mundoAnimal" password="" removeAbandoned="true" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:derby://localhost:1527/mundoAnimal" username=""/>
 </Context>
